@@ -4,33 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     <title>Avisos</title>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen flex flex-col transition-colors duration-300">
 
-    <nav class="shadow-lg">
+    <nav class="shadow-lg bg-white dark:bg-gray-800 transition-colors duration-300">
         <div class="container mx-auto px-4 py-2 flex justify-between items-center">
             <div> 
                 <a href="./index.html">
                     <img src="./assets/image-removebg-preview.png" alt="Logo" class="h-14">
                 </a>
             </div>
-            <div>
-                <a href="./index.html" class="font-regular px-2 hover:text-blue-500">Inicio</a>
-                <a href="./sobremi.html" class="font-regular px-2 hover:text-blue-500">Sobre Mí</a>
-                <a href="./materias2025.html" class="font-regular px-2 hover:text-blue-500">Materias 2025</a>
-                <a href="./avisos.html" class="font-bold px-2 hover:text-blue-500">Avisos</a>
-                <a href="./contacto.html" class="font-regular px-2 hover:text-blue-500">Contacto</a>
+            <div class="flex items-center space-x-4">
+                <div>
+                    <a href="./index.html" class="font-regular px-2 hover:text-blue-500 text-gray-900 dark:text-white transition-colors">Inicio</a>
+                    <a href="./sobremi.html" class="font-regular px-2 hover:text-blue-500 text-gray-900 dark:text-white transition-colors">Sobre Mí</a>
+                    <a href="./materias2025.html" class="font-regular px-2 hover:text-blue-500 text-gray-900 dark:text-white transition-colors">Materias 2025</a>
+                    <a href="./avisos.html" class="font-bold px-2 hover:text-blue-500 text-gray-900 dark:text-white transition-colors">Avisos</a>
+                    <a href="./contacto.html" class="font-regular px-2 hover:text-blue-500 text-gray-900 dark:text-white transition-colors">Contacto</a>
+                </div>
+                <!-- Dark Mode Toggle Button -->
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
+                    <svg id="sunIcon" class="w-5 h-5 text-yellow-500 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg id="moonIcon" class="w-5 h-5 text-gray-300 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
     <main class="flex-grow container mx-auto px-4 py-6">
-        <h1 class="text-4xl font-bold text-center pt-5 pb-10">Lista de Tareas por Materia</h1>
+        <h1 class="text-4xl font-bold text-center pt-5 pb-10 text-gray-900 dark:text-white transition-colors">Lista de Tareas por Materia</h1>
 
         <div class="flex flex-col lg:flex-row gap-4">
-            <div class="flex-1 bg-white p-4 rounded-lg shadow-md pl-5">
-                <h2 class="text-xl font-bold text-blue-500 mb-3 flex items-center">
+            <div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md pl-5 transition-colors duration-300">
+                <h2 class="text-xl font-bold text-blue-500 dark:text-blue-400 mb-3 flex items-center transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
@@ -38,24 +54,24 @@
                 </h2>
                 <ul>
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-3 text-sm">28/04</p>
-                        <li>Realizar ejercicio grupal integrador</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-3 text-sm transition-colors">28/04</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Realizar ejercicio grupal integrador</li>
                     </div>
         
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-3 text-sm">30/04</p>
-                        <li>Realizar ejercicio individual casos de prueba</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-3 text-sm transition-colors">30/04</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Realizar ejercicio individual casos de prueba</li>
                     </div>
 
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-3 text-sm">02/05</p>
-                        <li>Documentar resultados de testing</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-3 text-sm transition-colors">02/05</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Documentar resultados de testing</li>
                     </div>
                 </ul>
             </div>
 
-            <div class="flex-1 bg-white p-4 rounded-lg shadow-md pl-5">
-                <h2 class="text-xl font-bold text-blue-500 mb-3 flex items-center">
+            <div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md pl-5 transition-colors duration-300">
+                <h2 class="text-xl font-bold text-blue-500 dark:text-blue-400 mb-3 flex items-center transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
@@ -63,29 +79,29 @@
                 </h2>
                 <ul>
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-3 text-sm">05/05</p>
-                        <li>Realizar ejercicio Grid & Flex</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-3 text-sm transition-colors">05/05</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Realizar ejercicio Grid & Flex</li>
                     </div>
 
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-3 text-sm">07/05</p>
-                        <li>Realizar ejercicio Unidades de Medida</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-3 text-sm transition-colors">07/05</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Realizar ejercicio Unidades de Medida</li>
                     </div>
 
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-3 text-sm">09/05</p>
-                        <li>Realizar ejercicio integrador</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-3 text-sm transition-colors">09/05</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Realizar ejercicio integrador</li>
                     </div>
 
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-3 text-sm">12/05</p>
-                        <li>Realizar Parcial</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-3 text-sm transition-colors">12/05</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Realizar Parcial</li>
                     </div>
                 </ul>
             </div>
 
-            <div class="flex-1 bg-white p-4 rounded-lg shadow-md pl-5">
-                <h2 class="text-xl font-bold text-blue-500 mb-3 flex items-center">
+            <div class="flex-1 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md pl-5 transition-colors duration-300">
+                <h2 class="text-xl font-bold text-blue-500 dark:text-blue-400 mb-3 flex items-center transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
@@ -93,21 +109,23 @@
                 </h2>
                 <ul>
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-5 text-sm">15/05</p>
-                        <li>Repasar conceptos para el parcial</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-5 text-sm transition-colors">15/05</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Repasar conceptos para el parcial</li>
                     </div>
 
                     <div class="flex items-center my-3">
-                        <p class="text-blue-500 bg-blue-100 rounded-md py-1 px-3 mr-5 text-sm">17/05</p>
-                        <li>Realizar ejercicios conceptuales de practica</li>
+                        <p class="text-blue-500 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-md py-1 px-3 mr-5 text-sm transition-colors">17/05</p>
+                        <li class="text-gray-900 dark:text-gray-100 transition-colors">Realizar ejercicios conceptuales de practica</li>
                     </div>
                 </ul>
             </div>
         </div>
     </main>
 
-    <footer class="mt-auto p-4 bg-white text-center">
-        <p class="px-6 py-3 text-center text-sm text-gray-600 tracking-wider">Derechos Reservados | Primer Entrega Parcial &copy; 2025 | Lucas Vega</p>
+    <footer class="mt-auto p-4 bg-white dark:bg-gray-800 text-center transition-colors duration-300">
+        <p class="px-6 py-3 text-center text-sm text-gray-600 dark:text-gray-300 tracking-wider transition-colors">Derechos Reservados | Primer Entrega Parcial &copy; 2025 | Lucas Vega</p>
     </footer>
+
+    <script src="./assets/darkmode.js"></script>
 </body>
 </html>
